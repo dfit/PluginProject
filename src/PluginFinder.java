@@ -22,10 +22,9 @@ public class PluginFinder extends Observable implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		System.out.println("la");
 		checkChange();
 	}
-	public int nbChange(File[] files) {
+	/*public int nbChange(File[] files) {
 		File[] tmpFiles = classFiles();
 		int sizeTmp = files.length, cpt =0;
 		for(int i=0;i<sizeTmp; i++) {
@@ -40,10 +39,9 @@ public class PluginFinder extends Observable implements ActionListener{
 	public void rearrange(File[] files) {
 		Comparator<File> comp = new FileComparator();
 		Arrays.sort(files,comp);
-	}
+	}*/
 	public boolean checkChange() {
 		if(Arrays.deepEquals(files, classFiles())) {
-			System.out.println("ici");
 			return false;
 		}
 		else {

@@ -1,6 +1,7 @@
 package plugins;
 
 
+
 /**
  * represents a plugin that can be dynamiccaly added to the extendable editor.
  * A plugin can perform a transformation on a String.

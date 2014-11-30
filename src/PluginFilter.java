@@ -3,28 +3,48 @@ import java.io.FilenameFilter;
 
 import plugins.Plugin;
 
+public class PluginFilter implements FilenameFilter {
+	private final String PACKAGE_NAME = "plugins";
+	private Class<Plugin> plugin;
 
-public class PluginFilter implements FilenameFilter{
-	Class<Plugin> plugins;
 	@SuppressWarnings("unchecked")
 	private Class<Plugin> getClassFromFilename(String filename) {
 		ClassLoader loader = new PluginLoader();
 		try {
-			System.out.println(filename);
-			plugins = (Class<Plugin>) loader.loadClass("plugins." + filename.split("\\.")[0]);
+			plugin = (Class<Plugin>) loader.loadClass("plugins."
+					+ filename.split("\\.")[0]);
 		} catch (ClassNotFoundException e) {
 
 		}
-		return plugins;
+		return plugin;
 	}
+
+	private boolean checkConstructor() {
+		for (int i = 0; i < plugin.getConstructors().length; i++) {
+			if (plugin.getConstructors()[i].getParameterCount() == 0) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean checkInterface() {
+		for (int i = 0; i < plugin.getConstructors().length; i++) {
+			if (plugin.getInterfaces()[i].equals(Plugin.class)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	@Override
 	public boolean accept(File path, String filename) {
-		plugins = getClassFromFilename(filename);
-		if(plugins != null) {
-			System.out.println("lol");
+		plugin = getClassFromFilename(filename);
+		if (plugin != null && this.checkInterface()
+				&& plugin.getPackage().getName().equals(PACKAGE_NAME)
+				&& this.checkConstructor()) {
 			return true;
 		} else {
-			System.out.println("lol");
 			return false;
 		}
 	}

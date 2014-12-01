@@ -13,9 +13,8 @@ public class ToolsMenu extends JMenu implements Observer{
 
 	private static final long serialVersionUID = -5024517551358910299L;
 	JTextField text;
-	@SuppressWarnings("deprecation")
 	public ToolsMenu(JTextField text) {
-		this.setLabel("Tools");
+		super("Tools");
 		this.text=text;
 	}
 	@Override

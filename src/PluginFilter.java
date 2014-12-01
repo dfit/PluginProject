@@ -5,7 +5,7 @@ import plugins.Plugin;
 
 public class PluginFilter implements FilenameFilter {
 	private final String PACKAGE_NAME = "plugins";
-	private Class<Plugin> plugin;
+	Class<Plugin> plugin;
 
 	@SuppressWarnings("unchecked")
 	private Class<Plugin> getClassFromFilename(String filename) {
@@ -29,12 +29,7 @@ public class PluginFilter implements FilenameFilter {
 	}
 
 	private boolean checkInterface() {
-		for (int i = 0; i < plugin.getConstructors().length; i++) {
-			if (plugin.getInterfaces()[i].equals(Plugin.class)) {
-				return true;
-			}
-		}
-		return false;
+		return Plugin.class.isAssignableFrom(plugin);
 	}
 
 	@Override
@@ -42,11 +37,9 @@ public class PluginFilter implements FilenameFilter {
 		plugin = getClassFromFilename(filename);
 		if (plugin != null && this.checkInterface()
 				&& plugin.getPackage().getName().equals(PACKAGE_NAME)
-				&& this.checkConstructor()) {
+				&& this.checkConstructor())
 			return true;
-		} else {
-			return false;
-		}
+		return false;
 	}
 
 }

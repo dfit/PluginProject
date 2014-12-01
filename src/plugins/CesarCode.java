@@ -31,6 +31,7 @@ public class CesarCode implements Plugin {
 	/** Apply a Cesar code to the text (ie. a shift by 1 character)
 	 * @see plugin.Plugin#transform(java.lang.String)
 	 */
+	@Override
 	public String transform(String s) {
 		String res = "";
 		for (int i = 0; i < s.length(); i++) {
@@ -50,6 +51,7 @@ public class CesarCode implements Plugin {
 	/**
 	 * @see plugin.Plugin#getLabel()
 	 */
+	@Override
 	public String getLabel() {
 		return "Cesar Code " + this.shift;
 	}
@@ -57,6 +59,7 @@ public class CesarCode implements Plugin {
 	/**
 	 * @see plugin.Plugin#helpMessage()
 	 */
+	@Override
 	public String helpMessage() {
 		return "Apply a Cesar code to the text (ie. a shift by 1 character)";
 	}

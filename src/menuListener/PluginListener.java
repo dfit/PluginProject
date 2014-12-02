@@ -1,3 +1,6 @@
+package menuListener;
+import graphic.Menu;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -6,14 +9,14 @@ import plugins.Plugin;
 
 public class PluginListener implements ActionListener{
 	Plugin plug;
-	ToolsMenu tm;
-	public PluginListener(ToolsMenu tm,Plugin plug) {
+	Menu m;
+	public PluginListener(Menu m,Plugin plug) {
 		this.plug = plug;
-		this.tm = tm;
+		this.m = m;
 	}
 	@Override
 	public void actionPerformed(ActionEvent event) {
-		tm.modifyDisplay(plug);
+		m.modifyDisplay(plug);
 	}
 
 }

@@ -1,3 +1,6 @@
+package pluginManager;
+import graphic.Menu;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -13,17 +16,19 @@ public class PluginFinder extends Observable implements ActionListener {
 	protected File dir;
 	protected TimerPlugin timer;
 
-	public PluginFinder(File dir, ToolsMenu tools) {
+	public PluginFinder(File dir, ArrayList<Menu> menus) {
 		this.dir = dir;
 		files = classFiles();
 		timer = new TimerPlugin(this);
-		this.addObserver(tools);
+		addAllObserver(menus);
+	}
+	
+	public void addAllObserver(ArrayList<Menu> menus) {
+		for(Menu m : menus) this.addObserver(m);
 		setChanged();
 		notifyObservers(convert());
-
-		
 	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		if (checkChange()) {

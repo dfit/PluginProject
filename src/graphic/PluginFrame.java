@@ -1,4 +1,5 @@
 package graphic;
+
 import java.awt.TextArea;
 import java.io.File;
 import java.util.ArrayList;
@@ -20,26 +21,35 @@ public class PluginFrame extends JFrame {
 
 	public PluginFrame() {
 		super("Plugin project");
-		textArea = new TextArea("",5, 40,TextArea.SCROLLBARS_BOTH);
-		menuBar = new JMenuBar();
-		
-		initializeObserver();
-		
-		pf = new PluginFinder(new File("bin/plugins"), menus);
-		
-		menuBar.add(new JMenu("File"));
-		
-		menuBar.add(menus.get(0));
-		
-		menuBar.add(menus.get(1));
-		
-		setJMenuBar(menuBar);
-		
-		add(textArea);
+		initializeFrame();
+	}
+
+	public void initializeFrame() {
+		initializeItem();
 		this.setSize(300, 200);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+
+	public void initializeItem() {
+		textArea = new TextArea("", 5, 40, TextArea.SCROLLBARS_BOTH);
+		menuBar = new JMenuBar();
+
+		initializeObserver();
+
+		pf = new PluginFinder(new File("bin/plugins"), menus);
+
+		menuBar.add(new FileMenu(textArea));
+
+		menuBar.add(menus.get(0));
+
+		menuBar.add(menus.get(1));
+
+		setJMenuBar(menuBar);
+
+		add(textArea);
+	}
+
 	public void initializeObserver() {
 		menus = new ArrayList<Menu>();
 		menus.add(new ToolsMenu(textArea));

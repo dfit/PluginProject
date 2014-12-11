@@ -6,7 +6,11 @@ import java.util.Observable;
 import javax.swing.JMenuItem;
 
 import plugins.Plugin;
-
+/**
+ * 
+ * @author David Fitoussi & Simon Decottignies
+ *
+ */
 public class FileMenu extends Menu{
 
 	private static final long serialVersionUID = 4226549349485785692L;

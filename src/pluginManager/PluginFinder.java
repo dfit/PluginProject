@@ -45,7 +45,7 @@ public class PluginFinder extends Observable implements ActionListener {
 	}
 
 	/**
-	 * Used to convert all the plugins files into a list of plugins
+	 * Used to convert all the plugins files into a list of plugins instanciate
 	 * @return arrayList<Plugin>
 	 */
 	@SuppressWarnings("unchecked")
@@ -67,7 +67,7 @@ public class PluginFinder extends Observable implements ActionListener {
 	}
 
 	/**
-	 * Check if there a change in the files
+	 * Check if there is a change in the file list
 	 * @return true if there is a change, false otherwise
 	 */
 	public boolean checkChange() {

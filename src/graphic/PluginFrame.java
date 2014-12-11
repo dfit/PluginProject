@@ -8,7 +8,11 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 
 import pluginManager.PluginFinder;
-
+/**
+ * The main windows with the different component that are displayed
+ * @author David Fitoussi & Simon Decottignies
+ *
+ */
 public class PluginFrame extends JFrame {
 
 	private static final long serialVersionUID = -1475586549623619649L;

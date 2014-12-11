@@ -5,7 +5,11 @@ import javax.swing.JTextField;
 
 import plugins.Plugin;
 
-
+/**
+ * 
+ * @author David Fitoussi & Simon Decottignies
+ *
+ */
 public class ToolsMenu extends Menu{
 
 	private static final long serialVersionUID = -5024517551358910299L;

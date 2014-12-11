@@ -5,7 +5,11 @@ import java.awt.TextArea;
 
 import plugins.Plugin;
 
-
+/**
+ * 
+ * @author David Fitoussi & Simon Decottignies
+ *
+ */
 public class HelpMenu extends Menu{
 
 	private static final long serialVersionUID = 3657408344928724805L;

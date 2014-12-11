@@ -6,7 +6,11 @@ import java.awt.event.ActionListener;
 
 import plugins.Plugin;
 
-
+/**
+ * 
+ * @author David Fitoussi & Simon Decottignies
+ *
+ */
 public class PluginListener implements ActionListener{
 	Plugin plug;
 	Menu m;

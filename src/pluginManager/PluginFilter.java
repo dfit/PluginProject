@@ -20,7 +20,7 @@ public class PluginFilter implements FilenameFilter {
 		return plugin;
 	}
 
-	private boolean checkConstructor() {
+	protected boolean checkConstructor() {
 		for (int i = 0; i < plugin.getConstructors().length; i++) {
 			if (plugin.getConstructors()[i].getParameterCount() == 0) {
 				return true;
@@ -29,7 +29,7 @@ public class PluginFilter implements FilenameFilter {
 		return false;
 	}
 
-	private boolean checkInterface() {
+	protected boolean checkInterface() {
 		return Plugin.class.isAssignableFrom(plugin);
 	}
 

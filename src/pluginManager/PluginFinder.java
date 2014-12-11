@@ -38,7 +38,7 @@ public class PluginFinder extends Observable implements ActionListener {
 	}
 
 	@SuppressWarnings("unchecked")
-	private ArrayList<Plugin> convert() {
+	protected ArrayList<Plugin> convert() {
 		ArrayList<Plugin> plugins = new ArrayList<Plugin>();
 		Class<Plugin> plugin;
 		ClassLoader loader = new PluginLoader();

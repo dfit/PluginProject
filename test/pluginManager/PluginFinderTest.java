@@ -32,6 +32,8 @@ public class PluginFinderTest {
 		assertEquals(1, pluginFinder.countObservers());
 		pluginFinder.deleteObservers();
 		assertEquals(0, pluginFinder.countObservers());
+		pluginFinder.addAllObserver(menus);
+		assertEquals(1, pluginFinder.countObservers());
 	}
 	@Test
 	public void testConvert() {
@@ -55,7 +57,7 @@ public class PluginFinderTest {
 		assertTrue(pluginFinder.convert().size()==0);
 	}
 	@Test
-	public void testClassFileDuringLaunch() throws InterruptedException {
+	public void testRefreshingDuringLaunch() throws InterruptedException {
 		int tmp = pluginFinder.files.length;
 		assertTrue(tmp>0);
 		PluginMover.move(new File("bin/plugins/ToLowerCase.class"), new File("bin/plugins/testMove/ToLowerCase.class"));

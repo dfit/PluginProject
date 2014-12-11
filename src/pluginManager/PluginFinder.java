@@ -65,7 +65,7 @@ public class PluginFinder extends Observable implements ActionListener {
 	}
 
 	public File[] classFiles() {
-		FilenameFilter filter = new PluginFilter(dir);
+		FilenameFilter filter = new PluginFilter();
 		File[] tmp = dir.listFiles(filter);
 		if( tmp == null) {
 			return new File[0];

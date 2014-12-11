@@ -12,19 +12,20 @@ public class PluginFilterTest {
 	PluginLoader pluginLoader;
 	File dir;
 	PluginFilter pluginFilter;
-	String falseFileName, trueFileName, noExtensionFileName, extensionFileName, wrongPackageFilename;
+	String falseFileName, trueFileName, noExtensionFileName, extensionFileName, wrongPackageFilename, noEmptyConstructor;
 	
 
 	@Before
 	public void setUp() throws Exception {
 		pluginLoader = new PluginLoader();
 		dir = new File("bin/plugins");
-		pluginFilter = new PluginFilter(dir);
+		pluginFilter = new PluginFilter();
 		falseFileName = "falseFileName.class";
 		trueFileName = "ToUpperCase.class";
 		noExtensionFileName = "noExtensionFileName";
 		extensionFileName = "ADotClassName.class";
 		wrongPackageFilename = "TestPluginPackage.class";
+		noEmptyConstructor = "TestNoEmptyConstructor.class";
 	}
 
 	@Test
@@ -37,6 +38,11 @@ public class PluginFilterTest {
 	public void checkEmptyConstructor() throws ClassNotFoundException {
 		pluginFilter.getClassFromFilename(trueFileName);
 		assertTrue(pluginFilter.checkConstructor());
+	}
+	
+	@Test
+	public void checkNoEmptyConstructor() {
+		pluginFilter.getClassFromFilename(trueFileName);
 	}
 
 	@Test

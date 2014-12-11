@@ -7,10 +7,6 @@ import plugins.Plugin;
 public class PluginFilter implements FilenameFilter {
 	private final String PACKAGE_NAME = "plugins";
 	Class<Plugin> plugin;
-	File path;
-	public PluginFilter(File path) {
-		this.path = path;
-	}
 	@SuppressWarnings("unchecked")
 	protected Class<Plugin> getClassFromFilename(String filename) {
 		ClassLoader loader = new PluginLoader();

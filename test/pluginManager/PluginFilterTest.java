@@ -19,7 +19,7 @@ public class PluginFilterTest {
 	public void setUp() throws Exception {
 		pluginLoader = new PluginLoader();
 		dir = new File("bin/plugins");
-		pluginFilter = new PluginFilter();
+		pluginFilter = new PluginFilter(dir);
 		falseFileName = "falseFileName.class";
 		trueFileName = "ToUpperCase.class";
 		noExtensionFileName = "noExtensionFileName";

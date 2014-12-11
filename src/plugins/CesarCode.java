@@ -18,7 +18,7 @@ public class CesarCode implements Plugin {
 	 * a Cesar code where shift is 1
 	 */
 	public CesarCode() {
-		this(1); 
+		this(1);
 	}
 
 	/** Create a code where the shift of character is more than 1 (no more a strict Cesar code)

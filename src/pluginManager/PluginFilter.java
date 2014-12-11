@@ -7,7 +7,10 @@ import plugins.Plugin;
 public class PluginFilter implements FilenameFilter {
 	private final String PACKAGE_NAME = "plugins";
 	Class<Plugin> plugin;
-
+	File path;
+	public PluginFilter(File path) {
+		this.path = path;
+	}
 	@SuppressWarnings("unchecked")
 	protected Class<Plugin> getClassFromFilename(String filename) {
 		ClassLoader loader = new PluginLoader();
@@ -35,7 +38,6 @@ public class PluginFilter implements FilenameFilter {
 
 	@Override
 	public boolean accept(File path, String filename) {
-		System.out.println(path.getAbsolutePath());
 		plugin = getClassFromFilename(filename);
 		if (plugin != null && this.checkInterface()
 				&& plugin.getPackage().getName().equals(PACKAGE_NAME)

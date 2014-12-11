@@ -45,7 +45,7 @@ public class PluginFinder extends Observable implements ActionListener {
 	}
 
 	/**
-	 * used to convert all the plugins files into a list of plugins
+	 * Used to convert all the plugins files into a list of plugins
 	 * @return arrayList<Plugin>
 	 */
 	@SuppressWarnings("unchecked")

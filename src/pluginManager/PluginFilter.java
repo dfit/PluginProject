@@ -58,7 +58,7 @@ public class PluginFilter implements FilenameFilter {
 	}
 
 	/**
-	 * tell if the plugin file is a correct plugin file
+	 * Tell if the plugin file is a correct plugin file
 	 */
 	@Override
 	public boolean accept(File path, String filename) {

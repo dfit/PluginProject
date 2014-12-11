@@ -18,7 +18,7 @@ public class PluginFilter implements FilenameFilter {
 	/**
 	 * Load the plugin named by filename, only if that plugin exists
 	 * 
-	 * @param filename
+	 * @param filename name of the plugin
 	 * @return plugin class
 	 */
 	@SuppressWarnings("unchecked")
@@ -35,7 +35,7 @@ public class PluginFilter implements FilenameFilter {
 
 	/**
 	 * check if the plugin has an empty constructor
-	 * @param plugin
+	 * @param plugin 
 	 * @return return true if the plugin contains an empty constructor, false otherwise
 	 */
 	protected boolean checkConstructor(Class<Plugin> plugin) {
@@ -58,7 +58,7 @@ public class PluginFilter implements FilenameFilter {
 	}
 
 	/**
-	 * Tell if the file is a correct plugin file
+	 * Return true if the file is a acceptable plugin or false if it isn't
 	 */
 	@Override
 	public boolean accept(File path, String filename) {

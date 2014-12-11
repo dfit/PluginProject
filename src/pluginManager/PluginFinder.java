@@ -15,7 +15,7 @@ import plugins.Plugin;
  * 
  * @author David Fitoussi & Simon Decottignies
  * 
- * Used the find the new plugins in the specific directory
+ * Used to find the plugins in the specific directory
  *
  */
 public class PluginFinder extends Observable implements ActionListener {
@@ -29,13 +29,16 @@ public class PluginFinder extends Observable implements ActionListener {
 		timer = new TimerPlugin(this);
 		addAllObserver(menus);
 	}
-	
 	public void addAllObserver(ArrayList<Menu> menus) {
 		for(Menu m : menus) this.addObserver(m);
 		setChanged();
 		notifyObservers(convert());
 	}
 	
+	/**
+	 * Perform a check of the current list of files to see if there is a change with the folder file of plugin
+	 * every X seconds
+	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		if (checkChange()) {
@@ -78,7 +81,10 @@ public class PluginFinder extends Observable implements ActionListener {
 			return true;
 		}
 	}
-
+	/**
+	 * Use a plugin filter to return a list of plugin in their files forms
+	 * @return a tab of validated plugin files
+	 */
 	public File[] classFiles() {
 		FilenameFilter filter = new PluginFilter();
 		File[] tmp = dir.listFiles(filter);

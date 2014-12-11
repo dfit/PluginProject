@@ -9,7 +9,7 @@ public class PluginFilter implements FilenameFilter {
 	Class<Plugin> plugin;
 
 	@SuppressWarnings("unchecked")
-	private Class<Plugin> getClassFromFilename(String filename) {
+	protected Class<Plugin> getClassFromFilename(String filename) {
 		ClassLoader loader = new PluginLoader();
 		try {
 			plugin = (Class<Plugin>) loader.loadClass("plugins."

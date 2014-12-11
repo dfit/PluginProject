@@ -5,7 +5,6 @@ import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
-import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 
 import pluginManager.PluginFinder;
@@ -19,25 +18,25 @@ public class PluginFrame extends JFrame {
 	PluginFinder pf;
 	ArrayList<Menu> menus;
 
-	public PluginFrame() {
+	public PluginFrame(String path) {
 		super("Plugin project");
-		initializeFrame();
+		initializeFrame(path);
 	}
 
-	public void initializeFrame() {
-		initializeItem();
+	public void initializeFrame(String path) {
+		initializeItem(path);
 		this.setSize(300, 200);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	public void initializeItem() {
+	public void initializeItem(String path) {
 		textArea = new TextArea("", 5, 40, TextArea.SCROLLBARS_BOTH);
 		menuBar = new JMenuBar();
 
 		initializeObserver();
 
-		pf = new PluginFinder(new File("bin/plugins"), menus);
+		pf = new PluginFinder(new File(path), menus);
 
 		menuBar.add(new FileMenu(textArea));
 

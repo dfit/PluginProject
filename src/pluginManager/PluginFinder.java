@@ -16,7 +16,6 @@ import plugins.Plugin;
  * @author David Fitoussi & Simon Decottignies
  * 
  * Used to find the plugins in the specific directory
- *
  */
 public class PluginFinder extends Observable implements ActionListener {
 	protected File[] files;
@@ -70,7 +69,7 @@ public class PluginFinder extends Observable implements ActionListener {
 	}
 
 	/**
-	 * Check if there is a change in the file list
+	 * Check if there is a change in the files list
 	 * @return true if there is a change, false otherwise
 	 */
 	public boolean checkChange() {

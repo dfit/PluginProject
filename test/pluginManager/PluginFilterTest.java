@@ -54,6 +54,10 @@ public class PluginFilterTest {
 		assertFalse(pluginFilter.accept(dir, wrongPackageFilename));
 	}
 
+	@Test
+	public void acceptAFalseFile(){
+		assertFalse(pluginFilter.accept(dir, falseFileName));
+	}
 }
 
 

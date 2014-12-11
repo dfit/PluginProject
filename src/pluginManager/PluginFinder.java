@@ -15,7 +15,7 @@ import plugins.Plugin;
  * 
  * @author David Fitoussi & Simon Decottignies
  * 
- * Used the find the new plugins in the specific directory
+ * Used to find the new plugins in the specific directory
  *
  */
 public class PluginFinder extends Observable implements ActionListener {

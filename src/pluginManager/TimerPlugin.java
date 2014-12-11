@@ -1,7 +1,13 @@
 package pluginManager;
 import javax.swing.Timer;
 
-
+/**
+ * 
+ * @author David Fitoussi & Simon Decottignies
+ * 
+ * Timer count second
+ *
+ */
 public class TimerPlugin {
 	PluginFinder plug;
 	public TimerPlugin(PluginFinder plug) {

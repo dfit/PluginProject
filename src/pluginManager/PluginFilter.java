@@ -8,7 +8,7 @@ import plugins.Plugin;
  * 
  * @author David Fitoussi & Simon Decottignies
  * 
- * Used to filter the plugins contains in a specific folder
+ * Used to filter all the plugins contains in a specific folder
  *
  */
 public class PluginFilter implements FilenameFilter {
@@ -34,7 +34,7 @@ public class PluginFilter implements FilenameFilter {
 	}
 
 	/**
-	 * check if the plugin has an empty constructor
+	 * Check if the plugin has an empty constructor
 	 * @param plugin
 	 * @return return true if the plugin contains an empty constructor, false otherwise
 	 */
@@ -48,7 +48,7 @@ public class PluginFilter implements FilenameFilter {
 	}
 
     /**
-     * check if the plugin implements plugin interface	
+     * Check if the plugin implements plugin interface	
      * 
      * @param plugin
      * @return

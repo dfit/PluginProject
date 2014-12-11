@@ -30,7 +30,7 @@ public class PluginFinder extends Observable implements ActionListener {
 	}
 	
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent action) {
 		if (checkChange()) {
 			setChanged();
 			notifyObservers(convert());
@@ -66,7 +66,7 @@ public class PluginFinder extends Observable implements ActionListener {
 
 	public File[] classFiles() {
 		FilenameFilter filter = new PluginFilter();
-		return this.dir.listFiles(filter);
+		return dir.listFiles(filter);
 	}
 
 }

@@ -11,6 +11,13 @@ import java.util.Observable;
 
 import plugins.Plugin;
 
+/**
+ * 
+ * @author David Fitoussi & Simon Decottignies
+ * 
+ * Used the find the new plugins in the specific directory
+ *
+ */
 public class PluginFinder extends Observable implements ActionListener {
 	protected File[] files;
 	protected File dir;
@@ -37,6 +44,10 @@ public class PluginFinder extends Observable implements ActionListener {
 		}
 	}
 
+	/**
+	 * used to convert all the plugins files into a list of plugins
+	 * @return arrayList<Plugin>
+	 */
 	@SuppressWarnings("unchecked")
 	protected ArrayList<Plugin> convert() {
 		ArrayList<Plugin> plugins = new ArrayList<Plugin>();
@@ -55,6 +66,10 @@ public class PluginFinder extends Observable implements ActionListener {
 		return plugins;
 	}
 
+	/**
+	 * Check if there a change in the files
+	 * @return true if there is a change, false otherwise
+	 */
 	public boolean checkChange() {
 		if (Arrays.deepEquals(files, classFiles())) {
 			return false;

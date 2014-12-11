@@ -37,14 +37,26 @@ public class PluginFilterTest {
 	}
 	
 	@Test
-	public void checkEmptyConstructor() throws ClassNotFoundException {
+	public void checkEmptyConstructorTest() throws ClassNotFoundException {
 		Class<Plugin> plugin =pluginFilter.getClassFromFilename(trueFileName);
 		assertTrue(pluginFilter.checkConstructor(plugin));
 	}
 	
 	@Test
-	public void checkNoEmptyConstructor() {
-		pluginFilter.getClassFromFilename(trueFileName);
+	public void checkNoEmptyConstructorTest() {
+		Class<Plugin> plugin = pluginFilter.getClassFromFilename(noEmptyConstructor);
+		assertFalse(pluginFilter.checkConstructor(plugin));
+	}
+	@Test
+	public void checkInterfaceTest() throws ClassNotFoundException {
+		Class<Plugin> plugin =pluginFilter.getClassFromFilename(trueFileName);
+		assertTrue(pluginFilter.checkInterface(plugin));
+	}
+	
+	@Test
+	public void checkNoInterfaceTest() {
+		Class<Plugin> plugin = pluginFilter.getClassFromFilename(wrongPackageFilename);
+		assertFalse(pluginFilter.checkInterface(plugin));
 	}
 
 	@Test

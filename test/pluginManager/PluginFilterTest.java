@@ -7,6 +7,8 @@ import java.io.File;
 import org.junit.Before;
 import org.junit.Test;
 
+import plugins.Plugin;
+
 public class PluginFilterTest {
 	
 	PluginLoader pluginLoader;
@@ -36,8 +38,8 @@ public class PluginFilterTest {
 	
 	@Test
 	public void checkEmptyConstructor() throws ClassNotFoundException {
-		pluginFilter.getClassFromFilename(trueFileName);
-		assertTrue(pluginFilter.checkConstructor());
+		Class<Plugin> plugin =pluginFilter.getClassFromFilename(trueFileName);
+		assertTrue(pluginFilter.checkConstructor(plugin));
 	}
 	
 	@Test

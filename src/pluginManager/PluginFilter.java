@@ -19,7 +19,7 @@ public class PluginFilter implements FilenameFilter {
 		return plugin;
 	}
 
-	protected boolean checkConstructor() {
+	protected boolean checkConstructor(Class<Plugin> plugin) {
 		for (int i = 0; i < plugin.getConstructors().length; i++) {
 			if (plugin.getConstructors()[i].getParameterCount() == 0) {
 				return true;
@@ -28,16 +28,16 @@ public class PluginFilter implements FilenameFilter {
 		return false;
 	}
 
-	protected boolean checkInterface() {
+	protected boolean checkInterface(Class<Plugin> plugin) {
 		return Plugin.class.isAssignableFrom(plugin);
 	}
 
 	@Override
 	public boolean accept(File path, String filename) {
 		plugin = getClassFromFilename(filename);
-		if (plugin != null && this.checkInterface()
+		if (plugin != null && this.checkInterface(plugin)
 				&& plugin.getPackage().getName().equals(PACKAGE_NAME)
-				&& this.checkConstructor())
+				&& this.checkConstructor(plugin))
 			return true;
 		return false;
 	}

@@ -6,7 +6,6 @@ import graphic.Menu;
 
 import java.awt.TextArea;
 import java.io.File;
-import java.io.FileInputStream;
 import java.util.ArrayList;
 
 import org.junit.Before;

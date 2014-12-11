@@ -6,15 +6,17 @@ import java.util.Observable;
 import javax.swing.JMenuItem;
 
 import plugins.Plugin;
+
 /**
  * 
  * @author David Fitoussi & Simon Decottignies
  *
  */
-public class FileMenu extends Menu{
+public class FileMenu extends Menu {
 
 	private static final long serialVersionUID = 4226549349485785692L;
 	JMenuItem item;
+
 	public FileMenu(TextArea text) {
 		super(text, "File");
 		removeAll();
@@ -34,6 +36,7 @@ public class FileMenu extends Menu{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	@Override
 	public void update(Observable plug, Object plugins) {
 

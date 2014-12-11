@@ -10,12 +10,12 @@ import org.junit.Test;
 import plugins.Plugin;
 
 public class PluginFilterTest {
-	
+
 	PluginLoader pluginLoader;
 	File dir;
 	PluginFilter pluginFilter;
-	String falseFileName, trueFileName, noExtensionFileName, extensionFileName, wrongPackageFilename, noEmptyConstructor;
-	
+	String falseFileName, trueFileName, noExtensionFileName, extensionFileName,
+			wrongPackageFilename, noEmptyConstructor;
 
 	@Before
 	public void setUp() throws Exception {
@@ -31,31 +31,35 @@ public class PluginFilterTest {
 	}
 
 	@Test
-	public void getPluginClassWithExistingFileTest() throws ClassNotFoundException {
+	public void getPluginClassWithExistingFileTest()
+			throws ClassNotFoundException {
 		Class<?> classLoad = pluginLoader.loadClass("plugins.ToUpperCase");
 		assertEquals(classLoad, pluginFilter.getClassFromFilename(trueFileName));
 	}
-	
+
 	@Test
 	public void checkEmptyConstructorTest() throws ClassNotFoundException {
-		Class<Plugin> plugin =pluginFilter.getClassFromFilename(trueFileName);
+		Class<Plugin> plugin = pluginFilter.getClassFromFilename(trueFileName);
 		assertTrue(pluginFilter.checkConstructor(plugin));
 	}
-	
+
 	@Test
 	public void checkNoEmptyConstructorTest() {
-		Class<Plugin> plugin = pluginFilter.getClassFromFilename(noEmptyConstructor);
+		Class<Plugin> plugin = pluginFilter
+				.getClassFromFilename(noEmptyConstructor);
 		assertFalse(pluginFilter.checkConstructor(plugin));
 	}
+
 	@Test
 	public void checkInterfaceTest() throws ClassNotFoundException {
-		Class<Plugin> plugin =pluginFilter.getClassFromFilename(trueFileName);
+		Class<Plugin> plugin = pluginFilter.getClassFromFilename(trueFileName);
 		assertTrue(pluginFilter.checkInterface(plugin));
 	}
-	
+
 	@Test
 	public void checkNoInterfaceTest() {
-		Class<Plugin> plugin = pluginFilter.getClassFromFilename(wrongPackageFilename);
+		Class<Plugin> plugin = pluginFilter
+				.getClassFromFilename(wrongPackageFilename);
 		assertFalse(pluginFilter.checkInterface(plugin));
 	}
 
@@ -75,9 +79,7 @@ public class PluginFilterTest {
 	}
 
 	@Test
-	public void acceptAFalseFile(){
+	public void acceptAFalseFile() {
 		assertFalse(pluginFilter.accept(dir, falseFileName));
 	}
 }
-
-

@@ -1,4 +1,5 @@
 package pluginManager;
+
 import java.io.File;
 import java.io.FilenameFilter;
 
@@ -8,17 +9,18 @@ import plugins.Plugin;
  * 
  * @author David Fitoussi & Simon Decottignies
  * 
- * Used to filter all the plugins contains in a specific folder
+ *         Used to filter all the plugins contains in a specific folder
  *
  */
 public class PluginFilter implements FilenameFilter {
 	private final String PACKAGE_NAME = "plugins";
 	Class<Plugin> plugin;
-	
+
 	/**
 	 * Load the plugin named by filename, only if that plugin exists
 	 * 
-	 * @param filename name of the plugin
+	 * @param filename
+	 *            name of the plugin
 	 * @return plugin class
 	 */
 	@SuppressWarnings("unchecked")
@@ -35,8 +37,10 @@ public class PluginFilter implements FilenameFilter {
 
 	/**
 	 * Check if the plugin has an empty constructor
+	 * 
 	 * @param plugin
-	 * @return return true if the plugin contains an empty constructor, false otherwise
+	 * @return return true if the plugin contains an empty constructor, false
+	 *         otherwise
 	 */
 	protected boolean checkConstructor(Class<Plugin> plugin) {
 		for (int i = 0; i < plugin.getConstructors().length; i++) {
@@ -47,12 +51,12 @@ public class PluginFilter implements FilenameFilter {
 		return false;
 	}
 
-    /**
-     * Check if the plugin implements plugin interface	
-     * 
-     * @param plugin
-     * @return
-     */
+	/**
+	 * Check if the plugin implements plugin interface
+	 * 
+	 * @param plugin
+	 * @return
+	 */
 	protected boolean checkInterface(Class<Plugin> plugin) {
 		return Plugin.class.isAssignableFrom(plugin);
 	}

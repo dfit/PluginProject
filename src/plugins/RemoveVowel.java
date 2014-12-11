@@ -1,10 +1,12 @@
 package plugins;
 
-public class RemoveVowel implements Plugin{
-	String vowel[] = {"a","e","y","u","i","o","A","E","Y","U","I","O"};
+public class RemoveVowel implements Plugin {
+	String vowel[] = { "a", "e", "y", "u", "i", "o", "A", "E", "Y", "U", "I",
+			"O" };
+
 	@Override
 	public String transform(String s) {
-		for(String v : vowel) {
+		for (String v : vowel) {
 			s = s.replaceAll(v, " ");
 		}
 		return s;

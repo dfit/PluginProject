@@ -1,4 +1,5 @@
 package pluginManager;
+
 import graphic.Menu;
 
 import java.awt.event.ActionEvent;
@@ -15,7 +16,7 @@ import plugins.Plugin;
  * 
  * @author David Fitoussi & Simon Decottignies
  * 
- * Used to find the plugins in the specific directory
+ *         Used to find the plugins in the specific directory
  */
 public class PluginFinder extends Observable implements ActionListener {
 	protected File[] files;
@@ -28,15 +29,17 @@ public class PluginFinder extends Observable implements ActionListener {
 		timer = new TimerPlugin(this);
 		addAllObserver(menus);
 	}
+
 	public void addAllObserver(ArrayList<Menu> menus) {
-		for(Menu m : menus) this.addObserver(m);
+		for (Menu m : menus)
+			this.addObserver(m);
 		setChanged();
 		notifyObservers(convert());
 	}
-	
+
 	/**
-	 * Perform a check of the current list of files to see if there is a change with the folder file of plugin
-	 * every X seconds
+	 * Perform a check of the current list of files to see if there is a change
+	 * with the folder file of plugin every X seconds
 	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -48,6 +51,7 @@ public class PluginFinder extends Observable implements ActionListener {
 
 	/**
 	 * Used to convert all the plugins files into a list of plugins instanciate
+	 * 
 	 * @return arrayList<Plugin>
 	 */
 	@SuppressWarnings("unchecked")
@@ -70,6 +74,7 @@ public class PluginFinder extends Observable implements ActionListener {
 
 	/**
 	 * Check if there is a change in the files list
+	 * 
 	 * @return true if there is a change, false otherwise
 	 */
 	public boolean checkChange() {
@@ -80,14 +85,16 @@ public class PluginFinder extends Observable implements ActionListener {
 			return true;
 		}
 	}
+
 	/**
 	 * Use a plugin filter to return a list of plugin in their files forms
+	 * 
 	 * @return a tab of validated plugin files
 	 */
 	public File[] classFiles() {
 		FilenameFilter filter = new PluginFilter();
 		File[] tmp = dir.listFiles(filter);
-		if( tmp == null) {
+		if (tmp == null) {
 			return new File[0];
 		}
 		return tmp;

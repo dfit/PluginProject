@@ -1,10 +1,11 @@
 package plugins;
 
 public class TestNoEmptyConstructor implements Plugin {
-	
+
 	public TestNoEmptyConstructor(String noEmpty) {
-		
+
 	}
+
 	@Override
 	public String transform(String s) {
 		// TODO Auto-generated method stub

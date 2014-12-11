@@ -8,8 +8,10 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 
 import pluginManager.PluginFinder;
+
 /**
  * The main windows with the different component that are displayed
+ * 
  * @author David Fitoussi & Simon Decottignies
  *
  */

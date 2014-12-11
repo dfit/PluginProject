@@ -1,17 +1,17 @@
 package plugins;
 
-
-
-
-/** This plugin applies a Cesar code to the text (ie. a shift by 1 character: 'a' into 'b', 'b' into 'c',... 'z' into 'a').
- * Other shifts can be applied.
+/**
+ * This plugin applies a Cesar code to the text (ie. a shift by 1 character: 'a'
+ * into 'b', 'b' into 'c',... 'z' into 'a'). Other shifts can be applied.
+ * 
  * @author JC
  *
  */
 public class CesarCode implements Plugin {
 
-	/** the shift of character (1 for strict Cesar code) 
-	  */
+	/**
+	 * the shift of character (1 for strict Cesar code)
+	 */
 	private int shift;
 
 	/**
@@ -21,14 +21,20 @@ public class CesarCode implements Plugin {
 		this(1);
 	}
 
-	/** Create a code where the shift of character is more than 1 (no more a strict Cesar code)
-	 * @param shift value of character shift
+	/**
+	 * Create a code where the shift of character is more than 1 (no more a
+	 * strict Cesar code)
+	 * 
+	 * @param shift
+	 *            value of character shift
 	 */
 	public CesarCode(int shift) {
 		this.shift = shift;
 	}
 
-	/** Apply a Cesar code to the text (ie. a shift by 1 character)
+	/**
+	 * Apply a Cesar code to the text (ie. a shift by 1 character)
+	 * 
 	 * @see plugin.Plugin#transform(java.lang.String)
 	 */
 	@Override

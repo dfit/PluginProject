@@ -1,4 +1,5 @@
 package plugins;
+
 import plugins.Plugin;
 
 public class TestPlugin implements Plugin {

@@ -1,13 +1,15 @@
 package plugins;
 
-
-/** this plugin transforms all the letters to upper case
+/**
+ * this plugin transforms all the letters to upper case
  * 
  * @author JC
  */
 public class ToUpperCase implements Plugin {
 
-	/** transform all the letters to upper case
+	/**
+	 * transform all the letters to upper case
+	 * 
 	 * @see plugin.Plugin#transform(java.lang.String)
 	 */
 	@Override

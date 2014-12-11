@@ -1,5 +1,11 @@
 package plugins;
 
+/**
+ * Mockey class for test use
+ * 
+ * @author David Fitoussi & Simon Decottignies
+ *
+ */
 public class TestNoEmptyConstructor implements Plugin {
 
 	public TestNoEmptyConstructor(String noEmpty) {

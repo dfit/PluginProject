@@ -1,3 +1,5 @@
+package main;
+
 import graphic.PluginFrame;
 
 public class Main {

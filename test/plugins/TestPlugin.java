@@ -2,6 +2,12 @@ package plugins;
 
 import plugins.Plugin;
 
+/**
+ * Mockey class for test use
+ * 
+ * @author David Fitoussi & Simon Decottignies
+ *
+ */
 public class TestPlugin implements Plugin {
 
 	@Override

@@ -24,7 +24,7 @@ public class PluginFilterTest {
 		trueFileName = "ToUpperCase.class";
 		noExtensionFileName = "noExtensionFileName";
 		extensionFileName = "ADotClassName.class";
-		wrongPackageFilename = "TestPlugin.class";
+		wrongPackageFilename = "TestPluginPackage.class";
 	}
 
 	@Test

@@ -3,6 +3,6 @@ import graphic.PluginFrame;
 
 public class Main {
 	public static void main (String args[]) {
-		new PluginFrame("available/plugins");
+		new PluginFrame("bin/plugins");
 	}
 }

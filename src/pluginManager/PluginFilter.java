@@ -35,6 +35,7 @@ public class PluginFilter implements FilenameFilter {
 
 	@Override
 	public boolean accept(File path, String filename) {
+		System.out.println(path.getAbsolutePath());
 		plugin = getClassFromFilename(filename);
 		if (plugin != null && this.checkInterface()
 				&& plugin.getPackage().getName().equals(PACKAGE_NAME)

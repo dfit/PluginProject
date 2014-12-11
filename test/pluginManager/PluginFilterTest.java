@@ -27,7 +27,6 @@ public class PluginFilterTest {
 		noExtensionFileName = "noExtensionFileName";
 		extensionFileName = "ADotClassName.class";
 		wrongPackageFilename = "TestPluginPackage.class";
-		noEmptyConstructor = "TestNoEmptyConstructor.class";
 	}
 
 	@Test
@@ -41,13 +40,6 @@ public class PluginFilterTest {
 	public void checkEmptyConstructorTest() throws ClassNotFoundException {
 		Class<Plugin> plugin = pluginFilter.getClassFromFilename(trueFileName);
 		assertTrue(pluginFilter.checkConstructor(plugin));
-	}
-
-	@Test
-	public void checkNoEmptyConstructorTest() {
-		Class<Plugin> plugin = pluginFilter
-				.getClassFromFilename(noEmptyConstructor);
-		assertFalse(pluginFilter.checkConstructor(plugin));
 	}
 
 	@Test
